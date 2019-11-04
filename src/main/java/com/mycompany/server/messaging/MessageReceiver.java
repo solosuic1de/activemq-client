@@ -27,9 +27,13 @@ public class MessageReceiver {
     public String getResponse(String uuid) throws InterruptedException, ExecutionException, NoSuchElementException {
         Callable<String> task = () -> {
             String result = map.remove(uuid);
+            int spentTime = 0;
             while (result == null) {
+                if (spentTime == 300)
+                    throw new TimeoutException("server not response");
                 TimeUnit.MILLISECONDS.sleep(100);
                 result = map.remove(uuid);
+                spentTime++;
             }
             return result;
         };

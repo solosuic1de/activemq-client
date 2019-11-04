@@ -60,13 +60,13 @@
 </body>
 <script>
     function addToPathGet() {
-        var action_src = "http://localhost:8080/spring_mvc_helloworld_example_war_exploded/get/" + document.getElementsByName("id")[0].value;
+        var action_src = "${pageContext.request.contextPath}/get/" + document.getElementsByName("id")[0].value;
         var form = document.getElementById('get');
         form.action = action_src;
     }
 
     function addToPathDelete() {
-        var action_src = "http://localhost:8080/spring_mvc_helloworld_example_war_exploded/delete/" + document.getElementsByName("id")[1].value;
+        var action_src = "${pageContext.request.contextPath}/delete/" + document.getElementsByName("id")[1].value;
         var form = document.getElementById('delete');
         form.action = action_src;
     }
