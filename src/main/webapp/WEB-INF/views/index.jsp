@@ -44,7 +44,7 @@
         <input type="submit" value="Get all employee in db">
     </form>
     <form id="get" onsubmit="addToPathGet()">
-        <input type="number" name="id">
+        <input placeholder="Enter employee id" required type="number" name="id">
         <input type="submit" value="Get employee by id">
     </form>
     <form action="${pageContext.request.contextPath}/add" method="get">
@@ -52,7 +52,7 @@
     </form>
 
     <form id="delete" onsubmit="addToPathDelete()">
-        <input type="number" name="id">
+        <input placeholder="Enter employee id" required type="number" name="id">
         <input type="submit" value="Delete employee by id">
     </form>
 
